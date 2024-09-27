@@ -12,25 +12,18 @@ gostat 是一个基于 Go 语言的系统监控工具，能够在终端界面中
 
 ## 安装
 
-确保您的系统已安装 Go 语言环境，然后运行以下命令安装 gostat：
+使用以下命令安装 gostat：
 
-```
-go get github.com/yourusername/gostat
-```
+```bash
+curl -sSL https://raw.githubusercontent.com/Merbeleue/gostat/main/install.sh | bash
+ ```
 
 ## 使用方法
 
-进入项目目录并运行：
+安装后，您可以直接在命令行中使用 gostat：
 
-```
-go run main.go
-```
-
-或者，先构建再运行可执行文件：
-
-```
-go build
-./gostat
+```bash
+gostat
 ```
 
 ## 依赖项
@@ -45,10 +38,6 @@ go build
 ## 贡献
 
 欢迎贡献！请随时提交 Pull Request。
-
-## 许可证
-
-本项目采用 [MIT 许可证](LICENSE)。
 
 ## 致谢
 
