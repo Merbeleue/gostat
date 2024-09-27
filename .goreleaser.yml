@@ -1,9 +1,11 @@
-# This is an example .goreleaser.yml file with some sensible defaults.
-# Make sure to check the documentation at https://goreleaser.com
+# .goreleaser.yml
+version: 2  # 添加这行来指定版本
+
 before:
   hooks:
-    # You may remove this if you don't use go modules.
+    # 如果您不使用 go modules，可以删除这行
     - go mod tidy
+
 builds:
   - env:
       - CGO_ENABLED=0
@@ -12,17 +14,23 @@ builds:
     goarch:
       - amd64
       - arm64
+
 archives:
   - replacements:
       linux: Linux
       amd64: x86_64
+
 checksum:
   name_template: 'checksums.txt'
+
 snapshot:
   name_template: "{{ incpatch .Version }}-next"
+
 changelog:
   sort: asc
   filters:
     exclude:
       - '^docs:'
       - '^test:'
+
+# 如果需要，可以在这里添加更多的配置选项
