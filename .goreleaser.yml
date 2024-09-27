@@ -37,4 +37,7 @@ changelog:
       - '^docs:'
       - '^test:'
 
-# 如果需要，可以在这里添加更多的配置选项
+release:
+  github:
+    owner: Merbeleue
+    name: gostat
