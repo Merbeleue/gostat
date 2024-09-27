@@ -4,7 +4,7 @@ set -e  # Exit immediately if a command exits with a non-zero status.
 
 ARCH=$(uname -m)
 if [ "$ARCH" = "x86_64" ]; then
-    ARCH="amd64"
+    ARCH="x86_64"
 elif [ "$ARCH" = "aarch64" ] || [ "$ARCH" = "arm64" ]; then
     ARCH="arm64"
 else
