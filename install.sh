@@ -48,12 +48,3 @@ rm -rf "$TEMP_DIR"
 
 echo "gostat has been installed to /usr/local/bin/gostat"
 echo "You can now run it by typing 'gostat' in your terminal."
-
-# Verify installation
-if command -v gostat &> /dev/null; then
-    echo "Verification: gostat is successfully installed and accessible."
-    gostat --version
-else
-    echo "Verification failed: gostat command not found in PATH"
-    exit 1
-fi
