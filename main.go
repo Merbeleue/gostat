@@ -229,52 +229,34 @@ func updateNetworkData(data *NetworkData, netinfo *service.HostsInfo) {
 }
 
 func drawBorder(s tcell.Screen, x1, y1, x2, y2 int) {
-	borderStyle := tcell.StyleDefault.Foreground(tcell.ColorSpringGreen)
+	borderStyle := tcell.StyleDefault.Foreground(tcell.ColorLightCoral)
 
 	// Top and bottom borders
-	for x := x1 + 1; x < x2; x++ {
-		s.SetContent(x, y1, '═', nil, borderStyle)
-		s.SetContent(x, y2, '═', nil, borderStyle)
+	for x := x1; x <= x2; x++ {
+		s.SetContent(x, y1, '-', nil, borderStyle)
+		s.SetContent(x, y2, '-', nil, borderStyle)
 	}
 
 	// Left and right borders
-	for y := y1 + 1; y < y2; y++ {
-		s.SetContent(x1, y, '║', nil, borderStyle)
-		s.SetContent(x2, y, '║', nil, borderStyle)
+	for y := y1; y <= y2; y++ {
+		s.SetContent(x1, y, '|', nil, borderStyle)
+		s.SetContent(x2, y, '|', nil, borderStyle)
 	}
 
 	// Corners
-	s.SetContent(x1, y1, '╔', nil, borderStyle)
-	s.SetContent(x2, y1, '╗', nil, borderStyle)
-	s.SetContent(x1, y2, '╚', nil, borderStyle)
-	s.SetContent(x2, y2, '╝', nil, borderStyle)
-
-	// Add some decorative elements
-	if x2-x1 > 2 {
-		s.SetContent(x1+1, y1, '╤', nil, borderStyle)
-		s.SetContent(x2-1, y1, '╤', nil, borderStyle)
-		s.SetContent(x1+1, y2, '╧', nil, borderStyle)
-		s.SetContent(x2-1, y2, '╧', nil, borderStyle)
-	}
-	if y2-y1 > 2 {
-		s.SetContent(x1, y1+1, '╟', nil, borderStyle)
-		s.SetContent(x2, y1+1, '╢', nil, borderStyle)
-		s.SetContent(x1, y2-1, '╟', nil, borderStyle)
-		s.SetContent(x2, y2-1, '╢', nil, borderStyle)
-	}
+	s.SetContent(x1, y1, '+', nil, borderStyle)
+	s.SetContent(x2, y1, '+', nil, borderStyle)
+	s.SetContent(x1, y2, '+', nil, borderStyle)
+	s.SetContent(x2, y2, '+', nil, borderStyle)
 }
 
 func drawBox(s tcell.Screen, x, y, width, height int, title string) {
 	drawBorder(s, x, y, x+width-1, y+height-1)
 
-	// Draw title with a tech-savvy style
-	titleStyle := tcell.StyleDefault.Foreground(tcell.ColorPurple).Bold(true)
+	// Draw title
+	titleStyle := tcell.StyleDefault.Foreground(tcell.ColorYellow).Bold(true)
 	titleX := x + (width-len(title))/2
-	s.SetContent(titleX-1, y, '┤', nil, titleStyle)
-	for i, r := range title {
-		s.SetContent(titleX+i, y, r, nil, titleStyle)
-	}
-	s.SetContent(titleX+len(title), y, '├', nil, titleStyle)
+	drawText(s, titleX, y, width, 1, title, titleStyle)
 }
 
 func addCenteredContent(s tcell.Screen, x, y, width, height int, content string) {
