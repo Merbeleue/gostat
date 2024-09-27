@@ -12,23 +12,16 @@ gostat is a Go-based system monitoring tool that provides real-time network stat
 
 To install gostat, make sure you have Go installed on your system, then run:
 
-```
-go get github.com/yourusername/gostat
+```bash
+curl -sSL https://raw.githubusercontent.com/Merbeleue/gostat/main/install.sh | bash
 ```
 
 ## Usage
 
 Navigate to the project directory and run:
 
-```
-go run main.go
-```
-
-Or, build and run the executable:
-
-```
-go build
-./gostat
+```bash
+gostat
 ```
 
 ## Dependencies
