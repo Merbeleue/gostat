@@ -1,5 +1,7 @@
 # gostat
 
+[English](README_EN.md)
+
 gostat 是一个基于 Go 语言的系统监控工具，能够在终端界面中提供实时的网络统计信息。
 
 ## 特性
