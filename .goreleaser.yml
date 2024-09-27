@@ -1,9 +1,8 @@
 # .goreleaser.yml
-version: 2  # 添加这行来指定版本
+version: 2
 
 before:
   hooks:
-    # 如果您不使用 go modules，可以删除这行
     - go mod tidy
 
 builds:
@@ -16,9 +15,14 @@ builds:
       - arm64
 
 archives:
-  - replacements:
-      linux: Linux
-      amd64: x86_64
+  - format: tar.gz
+    name_template: >-
+      {{ .ProjectName }}_
+      {{- title .Os }}_
+      {{- if eq .Arch "amd64" }}x86_64
+      {{- else if eq .Arch "386" }}i386
+      {{- else }}{{ .Arch }}{{ end }}
+      {{- if .Arm }}v{{ .Arm }}{{ end }}
 
 checksum:
   name_template: 'checksums.txt'
