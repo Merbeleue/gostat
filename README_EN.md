@@ -2,6 +2,8 @@
 
 gostat is a Go-based system monitoring tool that provides real-time network statistics in a terminal-based user interface.
 
+Currently only Linux systems are supported.
+
 ## Features
 
 - Real-time network data visualization
