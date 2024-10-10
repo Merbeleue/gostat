@@ -130,7 +130,12 @@ func drawMemoryUsage(s tcell.Screen, x, y, width, height int) {
 
 // drawDockerInfo 函数显示Docker相关信息
 func drawDockerInfo(s tcell.Screen, x, y, width, height int) {
-	dockerInfo, _ := service.GetDockerInfo()
+	dockerInfo, err := service.GetDockerInfo()
+	if err != nil || dockerInfo == nil {
+		// 如果未安装 Docker，则显示提示信息
+		drawCenteredText(s, x, y, width, "Docker is not installed or not running.", tcell.StyleDefault.Foreground(tcell.ColorRed))
+		return
+	}
 
 	// 计算列宽
 	colWidth := width / 2
