@@ -2,14 +2,14 @@
 
 [English](README_EN.md)
 
-gostat 是一个基于 Go 语言的系统监控工具，能够在终端界面中提供实时的网络统计信息。
+gostat 是一个基于 Go 语言的系统监控工具，能够在终端界面中提供操作系统统计信息。
 
 目前仅支持Linux系统。
 
 ## 特性
 
 - 实时获取系统的基础信息
-- 基于终端的用户界面（使用 tview）
+- 基于终端的用户界面
 - 轻量级且易于使用
 
 ## 安装
@@ -32,7 +32,6 @@ gostat
 
 本项目依赖于以下优秀的库：
 
-- [tview](https://github.com/rivo/tview)：用于创建丰富的终端用户界面
 - [tcell](https://github.com/gdamore/tcell)：用于底层终端处理
 
 我们向这些项目的维护者和贡献者表示诚挚的感谢。
