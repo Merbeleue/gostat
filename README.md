@@ -17,7 +17,7 @@ gostat 是一个基于 Go 语言的系统监控工具，能够在终端界面中
 使用以下命令安装 gostat：
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/Merbeleue/gostat/main/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/Merbeleue/gostat/main/cninstall.sh | bash
  ```
 
 ## 使用方法
