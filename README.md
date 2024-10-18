@@ -22,7 +22,7 @@ curl -sSL https://raw.githubusercontent.com/Merbeleue/gostat/main/install.sh | b
 或者使用国内安装
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/Merbeleue/gostat/main/install_cn.sh | bash
+curl -sSL https://merblue.oss-cn-chengdu.aliyuncs.com/gostat/install_cn.sh | bash
  ```
 
 
